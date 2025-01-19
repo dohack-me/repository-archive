@@ -1,0 +1,16 @@
+title: Doormat
+author: samuzora
+description: |
+  I just discovered a new house - house of doormat! Adding it to the Malloc Maleficarium :)
+flag: ACSI{00bs_my_d00rm4t_pwn3d_m3}
+
+tags:
+  - pwn
+
+dist:
+  - ./dist/doormat
+  - ./dist/libc-2.27.so
+
+conn:
+  - url: nc <host> <port>
+    port: 8001

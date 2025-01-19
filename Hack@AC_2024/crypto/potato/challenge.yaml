@@ -1,0 +1,13 @@
+title: potato
+author: I-En
+description: |
+  i encrypted this with a potato 
+
+  wrap the cracked plaintext with ACSI{}
+flag: ACSI{pandas}
+
+tags:
+  - crypto
+
+dist:
+  - ./dist/enc

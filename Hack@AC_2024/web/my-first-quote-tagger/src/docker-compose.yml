@@ -1,0 +1,6 @@
+services:
+  redos:
+    build: ./web
+    ports:
+      - 7007:8000
+    restart: always

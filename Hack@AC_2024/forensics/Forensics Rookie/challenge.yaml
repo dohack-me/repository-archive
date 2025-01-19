@@ -1,0 +1,12 @@
+title: Forensics Rookie
+author: scz
+description: |
+  I dumped chess pieces on my roommate's head while he was sleeping... hehe
+
+flag: ACSI{y0u_5h0u1d_h4v3_533n_th3_*rook*_0n_h15_f4c3}
+
+tags:
+  - forensics
+
+dist:
+  - ./dist/Forensics_Rookie.zip

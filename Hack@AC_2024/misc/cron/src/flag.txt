@@ -1,0 +1,1 @@
+ACSI{* * * * * /usr/bin/cat flag.txt}

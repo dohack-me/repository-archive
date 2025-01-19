@@ -1,0 +1,14 @@
+title: Eat Sleep PWN Repeat
+author: sawntoe
+description: Eat sleep pwn repeat
+flag: ACSI{+h@t_wA5_t0o_3asy}
+
+tags:
+  - pwn
+
+dist:
+  - ./dist/pwnme
+
+conn:
+  - url: nc <host> <port>
+    port: 8002

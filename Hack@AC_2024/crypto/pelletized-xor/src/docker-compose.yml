@@ -1,0 +1,8 @@
+name: crypto
+version: "3.7"
+
+services:
+  pelletized-xor:
+    build: "."
+    ports:
+      - "3001:50000"

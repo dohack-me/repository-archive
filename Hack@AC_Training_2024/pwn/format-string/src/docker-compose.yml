@@ -1,0 +1,9 @@
+name: trainingpwn
+version: '3.7'
+
+services:
+  format-string:
+    build: ./build/
+    privileged: true
+    ports:
+      - "1001:5000"

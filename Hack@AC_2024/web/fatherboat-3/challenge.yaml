@@ -1,0 +1,16 @@
+author: samuzora
+title: Fatherboat 3.0
+description: |
+  Mandatory fatherboat challenge
+flag: ACSI{edgedb_i5_ju5t_a_numb3r}
+
+tags:
+  - web
+  - first blood
+
+dist:
+  - ./dist/dist.zip
+
+conn:
+  - url: http://<host>:<port>
+    port: 7001

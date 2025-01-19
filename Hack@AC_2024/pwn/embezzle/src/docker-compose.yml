@@ -1,0 +1,8 @@
+name: pwn
+
+services:
+  embezzle:
+    build: ./
+    privileged: true
+    ports:
+      - "8007:5000"

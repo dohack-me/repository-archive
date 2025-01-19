@@ -1,0 +1,10 @@
+title: Hacker Cat
+author: James
+description: my cat exclusively eats fish or mice
+flag: ACSI{HaxX0r_C4+}
+
+tags:
+  - crypto
+
+dist:
+  - ./dist/cat.png.txt

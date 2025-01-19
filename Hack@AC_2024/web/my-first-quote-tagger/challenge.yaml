@@ -1,0 +1,15 @@
+title: My First Quote Tagger
+author: kek
+description: |
+  I just started learning python and I built this _amazing_ service to help me tag my quotes with images! Give it a try! Don't steal my flag though :angry:
+flag: ACSI{wt5.15.a.r3d05?w41.4m.s0.l4g?gun1c0rn.h45.t1m30ut?????}
+
+tags:
+  - web
+
+dist: 
+  - ./dist/dist.zip
+
+conn:
+  - url: http://<host>:<port>
+    port: 7007

@@ -1,0 +1,20 @@
+title: 安心 Impact!
+author: samuzora
+description: |
+  総賞金です!
+
+  Come try out my new game, 安心 Impact! Made with love by NiYoHo Studios.
+flag: ACSI{h0nt0_k4waii_null_byt3}
+
+tags:
+  - pwn
+  - first blood
+
+dist:
+  - ./dist/anshin-impact
+  - ./dist/anshin-impact.c
+  - ./dist/libc.so.6
+
+conn:
+  - url: nc <host> <port>
+    port: 8004

@@ -1,0 +1,10 @@
+title: Stream of Consciousness
+author: Nigel
+description: The flag lies somewhere in my stream of consciousness.
+flag: ACSI{str34m_0f_th0ugh+}
+
+tags:
+  - forensics
+
+dist:
+  - ./dist/stream.pcap

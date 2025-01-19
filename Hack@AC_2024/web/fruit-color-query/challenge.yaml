@@ -1,0 +1,15 @@
+title: Fruit Color Query
+author: Reyes
+description: |
+  So my friend made a Quaint but Lovely webs ite that identifies the color of the image of the fruit you upload... but he isn't using any kind of smart image reader so the fruit-color pair is probably written into a database somewhere. maybe try uploading the image attached?
+flag: ACSI{sql1_i5_d34d?_1_d0n't_r341ly_Kn0w}
+
+tags:
+  - web
+
+dist:
+  - ./dist/normal_apple.jpg
+
+conn:
+  - url: http://<host>:<port>
+    port: 7002

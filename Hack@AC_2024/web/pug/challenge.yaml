@@ -1,0 +1,14 @@
+title: Puggers
+author: samuzora
+description: It's so poggers when I copy Pug source code so that I don't have to handle new updates
+flag: ACSI{pug_rc3_i5_n0t_p0ggers}
+
+tags:
+  - web
+
+dist:
+  - ./dist/dist.zip
+
+conn:
+  - url: http://<host>:<port>
+    port: 7006

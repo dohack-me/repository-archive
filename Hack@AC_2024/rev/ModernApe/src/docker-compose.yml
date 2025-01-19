@@ -1,0 +1,8 @@
+name: re
+version: '3.9'
+
+services:
+  modern-ape:
+    build: .
+    ports:
+      - "2000:8040"

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CommandInjection</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h2 id="important-details-if-you-are-a-pro-speedrunning-the-challenge">Important details if you are a pro speedrunning the challenge:</h2>
+<ol>
+<li><code>flag.txt</code> is located in the same directory as <code>app.py</code></li>
+<li>That’s all.</li>
+</ol>
+<h2 id="if-you-want-to-read-a-detailed-guide-follow-this">If you want to read a detailed guide, follow this:</h2>
+<p>The source code for this challenge is as follows:</p>
+<pre class=" language-python"><code class="prism  language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'GET'</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">,</span> stuff<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'POST'</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">[</span><span class="token string">'url'</span><span class="token punctuation">]</span>
+
+        <span class="token keyword">if</span> <span class="token string">"http://"</span> <span class="token operator">not</span> <span class="token keyword">in</span> url <span class="token operator">and</span> <span class="token string">"https://"</span> <span class="token operator">not</span> <span class="token keyword">in</span> url<span class="token punctuation">:</span>
+            stuff <span class="token operator">=</span> <span class="token string">"I know you tried to do something funny. Stop trying to hack me!\n file:// wont work!"</span>
+            <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">,</span> stuff<span class="token operator">=</span>stuff<span class="token punctuation">)</span>
+        
+        stuff <span class="token operator">=</span> os<span class="token punctuation">.</span>popen<span class="token punctuation">(</span>f<span class="token string">'curl {url}'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">,</span> stuff<span class="token operator">=</span>stuff<span class="token punctuation">)</span>
+</code></pre>
+<p>Can you find the crucial line that allows you to access files on the system?</p>
+<details>
+<summary>Click me for the answer!</summary>
+<p></p><code>os.popen(f'curl {url}').read()</code></p>
+</details>
+<p>This allows us to append arbitrary commands to the original <code>curl</code> command sent to the system.</p>
+<p>In bash, we can split commands using operators like <code>&amp;</code> <code>&amp;&amp;</code> <code>||</code>.</p>
+<p>Given that the original command was <code>ping {input}</code>, some examples include:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">ping</span> <span class="token operator">&amp;</span> <span class="token function">ls</span>
+<span class="token function">ping</span> <span class="token operator">&amp;</span> <span class="token function">rm</span> -rf *
+<span class="token function">ping</span> <span class="token operator">||</span> <span class="token function">ls</span>
+<span class="token function">ping</span> <span class="token operator">||</span> <span class="token function">users</span>
+<span class="token function">ping</span> 0 -c 1 <span class="token operator">&amp;&amp;</span> <span class="token function">ls</span>
+<span class="token function">ping</span> 0 -c 1 <span class="token operator">&amp;&amp;</span> <span class="token function">cd</span> /
+</code></pre>
+<p>For &amp;: Ping will be run in the background (error) and ls will be run in the foreground</p>
+<p>For ||: Ping will fail and give error, hence it will jump to the next command</p>
+<p>For &amp;&amp;: Will execute the second command only if the first command succeeds, hence we need to manipulate it a bit to make ping “succeed”.</p>
+<p>Now with this knowledge, can you figure out how to read the flag file from the directory?</p>
+<details>
+<summary>Hint:</summary>
+The command to list files in directory is <code>ls</code> and to read file to standard output is <code>cat filename</code>.</p>
+</details>
+<details>
+<summary>Click me for the answer!</summary>
+We can input <code>http://example.com/ &amp;&amp; cat flag.txt</code> which will give us a final command of <code>curl http://example.com/ &amp;&amp; cat flag.txt</code>, showing us the flag after the HTML of the dummy webpage. Note that this is only one possible solution and there are many others.</p>
+</details>
+<h3 id="yay-you-finished-the-challenge-i-hope...">Yay! You finished the challenge (I hope)…</h3>
+</div>
+</body>
+
+</html>

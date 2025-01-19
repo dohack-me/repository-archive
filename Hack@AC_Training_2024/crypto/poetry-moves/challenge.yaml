@@ -1,0 +1,13 @@
+title: Poetry moves
+author: I-En
+description: |
+  XOR is like poetry.
+
+  Well it's not, but I XORed a poem by accident. I don't remember the key, but it was 5 bytes long. Can you help me retrieve it?  
+flag: ACSI{x_0r_Sh4ke_sp34r}
+
+tags:
+  - crypto
+
+dist:
+  - ./dist/poem.txt

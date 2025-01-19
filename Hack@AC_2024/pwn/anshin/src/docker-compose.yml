@@ -1,0 +1,9 @@
+name: pwn
+version: '3.7'
+
+services:
+  anshin:
+    build: ./build/
+    privileged: true
+    ports:
+      - "8004:5000"

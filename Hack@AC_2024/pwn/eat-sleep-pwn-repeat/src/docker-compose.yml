@@ -1,0 +1,8 @@
+name: pwn
+
+services:
+  eat-sleep-pwn-repeat:
+    build: .
+    privileged: true
+    ports:
+      - "8002:5000"

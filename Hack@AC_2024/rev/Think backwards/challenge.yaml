@@ -1,0 +1,11 @@
+title: Think backwards
+author: I-En
+description: Welcome to Reverse Engineering (RE)! As a warmup, prove to me you can think backwards!
+flag: ACSI{b4ckw@rds_stuck_1m_h3Lp}
+
+tags:
+  - RE
+
+dist:
+  - ./dist/enc.py
+  - ./dist/out.txt

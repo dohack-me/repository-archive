@@ -1,0 +1,8 @@
+version: "3.9"
+name: web
+
+services:
+  very-vulnerable-site:
+    build: .
+    ports:
+      - "7004:8080"

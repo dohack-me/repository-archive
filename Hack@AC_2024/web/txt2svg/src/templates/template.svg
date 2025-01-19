@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+*COMMENT*
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 viewBox="0 0 *XDIMENSION* *YDIMENSION*" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'*FONTFAMILY*';}
+	.st1{font-size:*FONTSIZE*px;}
+	.st2{color:#000000;}
+</style>
+<text transform="matrix(1 0 0 1 *XTRANSLATE* *YTRANSLATE*)" class="st0 st1 st2">*CONTENT*</text>
+</svg>

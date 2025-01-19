@@ -1,0 +1,25 @@
+title: Shopee 11.11 Sale
+author: samuzora
+description: |
+  Shopee-pee-pee-pee-pee 9.9 Super Shopping Day
+
+  Buy Everything on Shopee Shopee 9.9 Super Shopping Day
+
+  Don't play play Use your brain (after free)
+
+  9.9. Super Shopping Day!
+
+  <https://www.youtube.com/watch?v=2XAGCZ3Sg4o>
+flag: ACSI{i7_w4snt_fr33_aft3r_4ll}
+
+tags:
+  - pwn
+  - first blood
+
+dist:
+  - ./dist/shopee
+  - ./dist/libc-2.27.so
+
+conn:
+  - url: nc <host> <port>
+    port: 8003

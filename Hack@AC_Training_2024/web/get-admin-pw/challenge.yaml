@@ -1,0 +1,19 @@
+title: Get Admin Password v1.0
+author: reyes
+description: Literally get the admin password and wrap in in ACSI{}
+flag: ACSI{hackac}
+
+tags:
+  - web
+
+dist:
+  - ./dist/web-challenge1.zip
+
+conn:
+  - url: http://<host>:<port>
+    port: 1003
+
+hints:
+  - id: 0
+    body: The password is just [a-zA-Z0-9]+
+    points: 0

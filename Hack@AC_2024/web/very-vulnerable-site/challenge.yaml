@@ -1,0 +1,14 @@
+title: Very Vulnerable Site
+author: Reyes
+description: So I think this site is pretty unbreakable. The flag seems to be impossible to obtain to me, but apparently there are multiple possible ways to get the flag? Maybe I'm just dumb...
+flag: ACSI{a_v3ry_v8lner4b13_p4g3_w1th_55t1_7wt_5q1i} 
+
+tags:
+  - web
+
+dist:
+  - ./dist/VeryVulnerableSite.zip
+
+conn:
+  - url: http://<host>:<port>
+    port: 7004

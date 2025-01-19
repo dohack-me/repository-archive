@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <h4>Here's your input:</h4><br>
+        <h3>{{data|safe}}</h3><br>
+        <h6>{{uid|safe}}</h6><br>
+        <button onclick="window.location.href='/';" class="btn btn-primary" style="width:35%; text-align: center;">Go back</button>
+    </div>
+    <script src="/static/temporary-script.js"></script>
+</body>
+</html>

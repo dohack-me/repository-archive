@@ -1,0 +1,16 @@
+author: sawntoe
+title: cron
+description: | 
+  What's a cron can I eat it
+
+  Password: `password`
+flag: ACSI{* * * * * /usr/bin/cat flag.txt}
+
+conn:
+  - url: ssh user@<host> -p <port>
+    runner:
+      id: misc-cron
+      src: ./src/
+
+tags:
+  - misc

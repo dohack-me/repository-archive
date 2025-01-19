@@ -1,0 +1,8 @@
+version: "3.9"
+name: web
+
+services:
+  command-injection:
+    build: .
+    ports:
+      - "7000:8080"

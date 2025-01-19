@@ -1,0 +1,10 @@
+title: Hack me :)
+author: sawntoe
+description: Hack me if you can :)
+flag: ACSI{0mGGGG!!!!_H0w_d1d_y0u_H@cK_mY_w1fI????}
+
+tags:
+  - forensics
+
+dist:
+  - ./dist/router.pcap-01.cap

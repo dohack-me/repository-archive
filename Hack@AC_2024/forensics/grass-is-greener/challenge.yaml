@@ -1,0 +1,10 @@
+title: Grass Is Greener
+author: James
+description: the Leaves Shade the Branches
+flag: ACSI{t0uch_gr@55}
+
+tags:
+  - forensics
+
+dist:
+  - ./dist/Grass_Final.zip

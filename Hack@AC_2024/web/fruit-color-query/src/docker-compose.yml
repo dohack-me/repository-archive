@@ -1,0 +1,8 @@
+version: "3.9"
+name: web
+
+services:
+  fruit-color-query:
+    build: .
+    ports:
+      - "7002:8080"

@@ -1,0 +1,14 @@
+author: samuzora
+title: Pwn 102
+description: Now, can you defeat the canary?
+flag: ACSI{t1l_ab0ut_th3_c4nary!}
+
+tags: 
+  - pwn
+
+dist:
+  - ./dist/canary
+
+conn:
+  - url: nc <host> <port>
+    port: 8005

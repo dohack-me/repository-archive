@@ -1,0 +1,16 @@
+title: Twinkle Twinkle
+author: beanbeah
+description: |
+  Last year, some very naughty people broke our Base-64 XZ Messaging System. 
+
+  So this year, we're using a **custom** messaging system that uses Neopixel (WS2812) LED lights to transmit messages!
+flag: ACSI{n0t_v3ryyy_s3cur33_m3ssag1ng_5y5t3m_fdb8ca26}
+
+tags:
+  - misc
+  - first blood
+
+dist:
+  - ./dist/capture.sal
+  - ./dist/protocol.md
+  - ./dist/src.c

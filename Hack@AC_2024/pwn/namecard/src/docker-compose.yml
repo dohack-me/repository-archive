@@ -1,0 +1,8 @@
+name: pwn
+
+services:
+  namecard:
+    build: ./
+    privileged: true
+    ports:
+      - "8008:5000"

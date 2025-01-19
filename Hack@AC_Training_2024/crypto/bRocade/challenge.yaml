@@ -1,0 +1,10 @@
+title: bRocade
+author: Elijah
+description: Check out these Funny Numbers I got from RSALib
+flag: ACSI{r3turn_0f_c0pp3rsm1th}
+
+tags:
+  - crypto
+
+dist:
+  - ./dist/funny_numbers.txt

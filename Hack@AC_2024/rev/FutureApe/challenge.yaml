@@ -1,0 +1,11 @@
+title: FutureApe
+author: scz
+description: |
+  There's now nothing left but ruins. But they said sometimes history repeats itself...
+flag: ACSI{0r_1t_ju5t_g0e5_1n_l00p5}
+
+tags:
+  - RE
+
+dist:
+  - ./dist/FutureApe.zip

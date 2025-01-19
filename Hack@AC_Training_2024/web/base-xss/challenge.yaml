@@ -1,0 +1,14 @@
+title: Get Admin Password v2.0
+author: reyes
+description: Literally get the admin password and submit it
+flag: ACSI{0mg_xs5_w1th0ut_scr1pt_t4g_d1d_y0u_us3_b4s3_t4g?}
+
+tags:
+  - web
+
+dist:
+  - ./dist/web-challenge2.zip
+
+conn:
+  - url: http://<host>:<port>
+    port: 1004

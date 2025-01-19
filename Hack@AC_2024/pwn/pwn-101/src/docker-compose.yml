@@ -1,0 +1,9 @@
+version: "3.7"
+name: pwn
+
+services:
+  pwn-102:
+    build: ./
+    privileged: true
+    ports:
+      - 8006:5000

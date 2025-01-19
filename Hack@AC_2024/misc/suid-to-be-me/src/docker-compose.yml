@@ -1,0 +1,8 @@
+name: misc
+version: "3.9"
+
+services:
+  suid-to-be-me:
+    build: .
+    ports:
+      - "5000:9999"

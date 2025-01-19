@@ -1,0 +1,17 @@
+title: Embezzle
+author: GenericUser
+description: |
+  Where did all the money go?
+flag: ACSI{st34l1ng_1s_b4d}
+
+tags:
+  - pwn
+
+dist:
+  - ./dist/Dockerfile
+  - ./dist/embezzle
+  - ./dist/main.c
+
+conn: 
+  - url: nc <host> <port>
+    port: 8007

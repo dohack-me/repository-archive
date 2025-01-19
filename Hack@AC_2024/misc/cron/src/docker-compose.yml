@@ -1,0 +1,7 @@
+name: misc
+
+services:
+  cron:
+    build: ./
+    ports:
+      - "5000:22"

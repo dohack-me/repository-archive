@@ -1,0 +1,20 @@
+title: Pelletized XOR
+author: Caleb
+description: It's getting harder and harder to make compelling challenges, so this is just XOR cipher. I've even provided you the key! Don't get expelled for bad input and the final prize will be within your reach!
+flag: ACSI{c0NgrAt5_u_Ma5T3ReD_THe_p3l1_eqUat10N!_fj23d}
+
+tags:
+  - crypto
+
+dist:
+  - ./dist/run.py
+  - ./dist/flag.txt
+
+conn:
+  - url: nc <host> <port>
+    port: 3001
+
+hints:
+  - id: 0
+    body: What is a pell equation?
+    points: 20

@@ -1,0 +1,10 @@
+title: Object Oriented Programming
+author: Nigel
+description: Objects are everywhere, even in the most unlikely of places.
+flag: ACSI{s0_m4ny_0bj4c+5}
+
+tags:
+  - forensics
+
+dist:
+  - ./dist/objects.pcap

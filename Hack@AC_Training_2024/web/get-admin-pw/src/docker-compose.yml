@@ -1,0 +1,8 @@
+name: trainingweb
+
+services:
+  get-admin-pw:
+    build: ./build/
+    privileged: true
+    ports:
+      - "1003:5050"

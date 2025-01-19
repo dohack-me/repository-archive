@@ -1,0 +1,11 @@
+author: Reyes
+title: Guided Command Injection
+description: The guide and source is located at `/guide`. Have fun!
+flag: ACSI{bl4tant_c0mm4nd_1nj3ction}
+
+tags:
+  - web
+
+conn:
+  - url: http://<host>:<port>
+    port: 7000

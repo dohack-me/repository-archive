@@ -1,0 +1,17 @@
+name: web
+
+services:
+  web:
+    build: ./web
+    environment:
+      EDGEDB_CLIENT_SECURITY: insecure_dev_mode
+    ports:
+      - 7001:8080
+    depends_on:
+      - db
+    restart: always
+  db:
+    build: ./edgedb
+    environment:
+      EDGEDB_SERVER_SECURITY: insecure_dev_mode
+    restart: always

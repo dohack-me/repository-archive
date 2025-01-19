@@ -1,0 +1,12 @@
+title: RandomlySelectedAlgorithm
+author: I-En
+description: An introduction to the RSA algorithm! Go to /index.html if it doesn't work
+difficulty: warmup
+flag: ACSI{i_l0ve_RS@}
+
+tags:
+  - crypto
+
+conn:
+  - url: http://<host>:<port>
+    port: 3000

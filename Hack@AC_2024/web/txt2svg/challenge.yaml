@@ -1,0 +1,14 @@
+title: Txt2SVG
+author: Reyes
+description: I made a webapp which can convert your text into a styled svg picture, but for some reason the comments that you can put in aren't in the final result. Why?
+flag: ACSI{t8rns_0ut_th3_SVG_XML_1s_p4rsed}
+
+tags:
+  - web
+
+dist:
+  - ./dist/txt2svg.zip
+
+conn:
+  - url: http://<host>:<port>
+    port: 7005

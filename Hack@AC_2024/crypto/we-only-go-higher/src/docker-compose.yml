@@ -1,0 +1,8 @@
+name: crypto
+version: "3.7"
+
+services:
+  we-only-go-higher:
+    build: "." 
+    ports: 
+      - "3002:50000"

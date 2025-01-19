@@ -1,0 +1,17 @@
+title: Namecard
+author: GenericUser
+description: |
+  Check out our epic namecard printing service. 
+flag: ACSI{1_sh0uld_h4v3_m4d3_1t_4_l0ng}
+
+tags:
+  - pwn
+
+dist:
+  - ./dist/Dockerfile
+  - ./dist/main.c
+  - ./dist/namecard
+
+conn: 
+  - url: nc <host> <port>
+    port: 8008

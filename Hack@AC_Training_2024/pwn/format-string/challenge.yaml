@@ -1,0 +1,15 @@
+title: Format string
+author: samuzora
+description: Why is printf dangerous?
+flag: ACSI{%n_th3_w3ird3st_wr1t3_pr1mtiv3}
+
+tags:
+  - pwn
+
+dist:
+  - ./dist/chall
+  - ./dist/chall.c
+
+conn:
+  - url: nc <host> <port>
+    port: 1001

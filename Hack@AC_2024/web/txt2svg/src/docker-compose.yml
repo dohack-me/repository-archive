@@ -1,0 +1,8 @@
+version: "3.9"
+name: web
+
+services:
+  txt2svg:
+    build: .
+    ports:
+      - "7005:8080"

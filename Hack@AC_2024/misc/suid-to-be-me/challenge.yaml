@@ -1,0 +1,16 @@
+title: SUID to be me
+author: sawntoe
+description: |
+  It's SUID to be me, so become like me. :)
+
+  Flag is at `/root/flag.txt`
+flag: ACSI{1t_s_sU1d_t0_m333333t_yU_t000!!!!!}
+
+tags:
+  - misc
+
+conn:
+  - url: nc <host> <port>
+    runner:
+      id: misc-suid
+      src: ./src/

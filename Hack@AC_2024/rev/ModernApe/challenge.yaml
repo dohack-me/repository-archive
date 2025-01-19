@@ -1,0 +1,15 @@
+title: ModernApe
+author: scz
+description: |
+  The last time you visited AncientApe was quite some time back, it has now evolved into ModernApe.
+flag: ACSI{b33p_b33p_b5n5n5!}
+
+tags:
+  - RE
+
+conn:
+  - url: http://<host>:<port>
+    port: 2000
+
+dist:
+  - ./dist/ModernApe.zip

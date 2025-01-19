@@ -1,0 +1,16 @@
+title: Libwary
+author: Reyes
+description: Try to read the flag from The Libwary. (Impossible)
+difficulty: medium
+flag: ACSI{0mg_th4nks_f0r_r3ading!}
+
+tags:
+  - web
+  - first blood
+
+dist:
+  - ./dist/libwary.zip
+
+conn:
+  - url: http://<host>:<port>
+    port: 7003

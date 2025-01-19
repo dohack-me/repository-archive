@@ -1,0 +1,11 @@
+title: ASCII Me Anything
+author: NL70
+description: I got this weird output from this program, can you help me figure out the input?
+flag: ACSI{j3v3sc1pt_i5_str4ang3}
+
+tags:
+  - RE
+
+dist:
+  - ./dist/source.js
+  - ./dist/output.txt

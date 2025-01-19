@@ -1,0 +1,15 @@
+title: Variable overwrite
+author: samuzora
+description: How does a buffer overflow work?
+flag: ACSI{buff3r_0v3rfl0w_is_d4nger0us!}
+
+tags:
+  - pwn
+
+dist:
+  - ./dist/chall
+  - ./dist/chall.c
+
+conn:
+  - url: nc <host> <port>
+    port: 1000

@@ -1,0 +1,9 @@
+name: trainingpwn
+version: '3.7'
+
+services:
+  variable-overwrite:
+    build: ./build/
+    privileged: true
+    ports:
+      - "1000:5000"

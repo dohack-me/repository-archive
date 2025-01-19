@@ -1,0 +1,14 @@
+title: Pwn 101
+author: samuzora
+description: Let's try a ret2win challenge today!
+flag: ACSI{pwn_1s_s0_fun!!!}
+
+tags:
+  - pwn
+
+dist:
+  - ./dist/ret2win
+
+conn:
+  - url: nc <host> <port>
+    port: 8006
