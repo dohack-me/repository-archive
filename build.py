@@ -1,23 +1,37 @@
-import docker
 import os
+import subprocess
 
 def find_dockerfiles():
     dockerfiles = []
-    for root, dirs, files in os.walk('.'):
-        if 'Dockerfile' in files:
-            dockerfiles.append(os.path.join(root, 'Dockerfile'))
+    for root, dirs, files in os.walk("."):
+        if "Dockerfile" in files:
+            dockerfiles.append(os.path.join(root, "Dockerfile"))
     return dockerfiles
 
 def clean(value):
-    value = ''.join(char.lower() for char in value if char.isalnum() or char in ['-', '_'])
+    value = "".join(char.lower() for char in value if char.isalnum() or char in ["-", "_"])
     return value
 
-client = docker.from_env()
-    
+to_build = {}
+to_delete = []
+for dockerfile in find_dockerfiles():
+    repository, category, name, folder = (clean(value) for value in dockerfile.split(os.sep)[1:5])
+    tag = f"registry.dohack.me/{repository}/{category}/{name}:latest"
+    if folder == "src":
+        if tag in to_build.keys():
+            to_delete.append(tag) # Repeat tags probably mean the challenge requires a stack, and should be skipped
+        else:
+            to_build.update({tag: dockerfile})
 
-dockerfiles = find_dockerfiles()
-for dockerfile in dockerfiles:
-    repository, category, name = (clean(value) for value in dockerfile.split(os.sep)[1:4])
-    print(dockerfile)
-    print(f'registry.dohack.me/{repository}/{category}/{name}:latest')
-    print('-----------------------')
+for tag in to_delete:
+    to_build.pop(tag)
+    print(f"{tag} removed")
+
+for tag, location in to_build.items():
+    print(f"Building {tag}")
+    result = subprocess.run(["docker", "build", "-t", tag, "-f", location, os.path.dirname(location)], shell=True,
+                            capture_output=True, text=True)
+    if result.returncode == 0:
+        print(f"{tag} built successfully")
+    else:
+        print(f"{tag} failed")
