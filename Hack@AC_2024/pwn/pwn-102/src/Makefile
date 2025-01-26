@@ -1,1 +1,1 @@
-gcc -no-pie -o ret2win ret2win.c
+gcc -no-pie -o canary canary.c

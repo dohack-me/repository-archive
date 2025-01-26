@@ -1,6 +1,14 @@
-FROM ubuntu:18.04 AS src
+FROM ubuntu:18.04 as src
+
+RUN apt-get update && apt-get install -y build-essential
+RUN mkdir /workdir
+COPY . /workdir
+WORKDIR /workdir
+RUN make
 
 FROM redpwn/jail:v0.0.1
+
+EXPOSE 5000
 
 ENV JAIL_TIME 60
 

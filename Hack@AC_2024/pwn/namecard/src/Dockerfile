@@ -1,5 +1,7 @@
 FROM pwn.red/jail
 
+EXPOSE 5000
+
 COPY --from=ubuntu@sha256:e9569c25505f33ff72e88b2990887c9dcf230f23259da296eb814fc2b41af999 / /srv
 
 COPY ./flag.txt /srv/app/flag.txt

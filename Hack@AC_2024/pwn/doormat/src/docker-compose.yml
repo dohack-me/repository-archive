@@ -1,9 +1,0 @@
-name: pwn
-version: '3.7'
-
-services:
-  doormat:
-    build: ./build/
-    privileged: true
-    ports:
-      - "8001:5000"
