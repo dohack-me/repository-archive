@@ -1,6 +1,8 @@
 FROM python:3.9
+EXPOSE 5000
+
 WORKDIR /app
-COPY . /app
+COPY build /app
 RUN pip install -r requirements.txt
 
 RUN chmod +x geckodriver

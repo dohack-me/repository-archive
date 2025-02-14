@@ -2,7 +2,7 @@ name: trainingweb
 
 services:
   base-xss:
-    build: ./build/
+    build: .
     privileged: true
     ports:
       - "1004:5000"
