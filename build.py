@@ -1,37 +1,40 @@
 import os
-import subprocess
 
-def find_dockerfiles(root_dir):
+import docker.errors
+
+client = docker.from_env()
+REGISTRY = "dohackme.azurecr.io"
+
+def __find_dockerfile(repository: str, category: str, challenge: str):
     dockerfiles = []
-    for root, dirs, files in os.walk(root_dir):
+    for root, dirs, files in os.walk(os.path.join(repository, category, challenge, "src")):
         if "Dockerfile" in files:
-            dockerfiles.append(os.path.join(root, "Dockerfile"))
+            dockerfiles.append(root)
     return dockerfiles
 
-def clean(value):
+def __clean(value):
     value = "".join(char.lower() for char in value if char.isalnum() or char in ["-", "_"])
     return value
 
-to_build = {}
-to_delete = []
-for dockerfile in find_dockerfiles(os.path.join(".", "Hack@AC_2024")):
-    repository, category, name, folder = (clean(value) for value in dockerfile.split(os.sep)[1:5])
-    tag = f"dohackme.azurecr.io/{repository}/{category}/{name}:latest"
-    if folder == "src":
-        if tag in to_build.keys():
-            to_delete.append(tag) # Repeat tags probably mean the challenge requires a stack, and should be skipped
-        else:
-            to_build.update({tag: dockerfile})
+def __get_image_name(repository: str, category: str, challenge: str):
+    return f"{__clean(repository)}/{__clean(category)}/{__clean(challenge)}"
 
-for tag in to_delete:
-    to_build.pop(tag)
-    print(f"{tag} removed")
-
-for tag, location in to_build.items():
-    print(f"Building {tag}")
-    result = subprocess.run(["docker", "build", "-t", tag, "-f", location, os.path.dirname(location)],
-                            capture_output=True, text=True)
-    if result.returncode == 0:
-        print(f"{tag} built successfully")
-    else:
-        print(f"{tag} failed")
+def build_image(repository: str, category: str, challenge: str):
+    dockerfiles = __find_dockerfile(repository, category, challenge)
+    image_name = __get_image_name(repository, category, challenge)
+    if len(dockerfiles) > 1:
+        print(f"More than one Dockerfile found in {image_name}!")
+        return
+    dockerfile = dockerfiles[0]
+    print(f"Building {image_name}...")
+    try:
+        image, log = client.images.build(
+            path=dockerfile,
+            tag=image_name,
+            rm=True,
+        )
+        image.tag(f"{REGISTRY}/{image_name}")
+        print(f"Successfully built {image_name}")
+    except docker.errors.BuildError as ex:
+        print(f"FAILED to build {image_name}")
+        print(ex)
